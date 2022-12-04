@@ -1,0 +1,178 @@
+[
+  {
+    "line": 3,
+    "elements": [
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": []
+      },
+      {
+        "start_timestamp": "2022-11-26T09:42:05.358Z",
+        "line": 6,
+        "name": "Login into applicatio with valid credentials",
+        "description": "",
+        "id": "verify-the-basket-functionality;login-into-applicatio-with-valid-credentials",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 4004200,
+              "status": "skipped"
+            },
+            "line": 7,
+            "name": "User Launch the site URL",
+            "match": {
+              "location": "com.StepDefination.com.HomePageSteps.userLaunchTheSiteUrl()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1007900,
+              "status": "skipped"
+            },
+            "line": 8,
+            "name": "Allow cookies popup and age confirmation",
+            "match": {
+              "location": "com.StepDefination.com.HomePageSteps.allowCookiesPopupAndAgeConfirmation()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1004800,
+              "status": "skipped"
+            },
+            "line": 9,
+            "name": "User Enter Username and Password",
+            "match": {
+              "location": "com.StepDefination.com.LoginPageSteps.userEnterUsernameAndPassword()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@tag1"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": []
+      },
+      {
+        "start_timestamp": "2022-11-26T09:42:05.490Z",
+        "line": 12,
+        "name": "Verify user is able to add the product into the basket from PDP page",
+        "description": "",
+        "id": "verify-the-basket-functionality;verify-user-is-able-to-add-the-product-into-the-basket-from-pdp-page",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1998400,
+              "status": "skipped"
+            },
+            "line": 13,
+            "name": "User Search the Product",
+            "match": {
+              "location": "com.StepDefination.com.HomePageSteps.searchTheProduct()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 999700,
+              "status": "skipped"
+            },
+            "line": 14,
+            "name": "User Navigate to PDP Page",
+            "match": {
+              "location": "com.StepDefination.com.PDPPageSteps.userNavigateToPDPPage()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 999800,
+              "status": "skipped"
+            },
+            "line": 15,
+            "name": "Click on add to cart button",
+            "match": {
+              "location": "com.StepDefination.com.PDPPageSteps.clickOnAddToCartButton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1000100,
+              "status": "skipped"
+            },
+            "line": 16,
+            "name": "User verify the Mini Cart Page Title",
+            "match": {
+              "location": "com.StepDefination.com.CartPageSteps.verifyMiniCartTitle()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 999100,
+              "status": "skipped"
+            },
+            "line": 17,
+            "name": "Verify mini basket count",
+            "match": {
+              "location": "com.StepDefination.com.CartPageSteps.verifyMiniBasketCount()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1003700,
+              "status": "skipped"
+            },
+            "line": 18,
+            "name": "User open basket click on view basket button",
+            "match": {
+              "location": "com.StepDefination.com.CartPageSteps.openBasketClickOnViewBasketButton()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@tag1"
+          }
+        ]
+      }
+    ],
+    "name": "Verify the basket functionality",
+    "description": "",
+    "id": "verify-the-basket-functionality",
+    "keyword": "Feature",
+    "uri": "file:Feature/Basket.feature",
+    "tags": [
+      {
+        "name": "@tag1",
+        "type": "Tag",
+        "location": {
+          "line": 2,
+          "column": 1
+        }
+      }
+    ]
+  }
+]

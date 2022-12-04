@@ -1,0 +1,156 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": []
+      },
+      {
+        "start_timestamp": "2022-08-01T14:05:27.037Z",
+        "line": 5,
+        "name": "Login into applicatio with valid credentials",
+        "description": "",
+        "id": "verify-the-homepage-elements;login-into-applicatio-with-valid-credentials",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "error_message": "java.lang.NullPointerException: Cannot invoke \"org.openqa.selenium.WebDriver.get(String)\" because \"com.BaseClass.com.BaseClass.driver\" is null\r\n\tat com.BaseClass.com.BaseClass.launchBrowser(BaseClass.java:42)\r\n\tat com.StepDefination.com.HomePageSteps.userLaunchTheSiteUrl(HomePageSteps.java:19)\r\n\tat ✽.User Launch the site URL(file:///C:/Users/saura/eclipse-workspace/com.SwagLab.com/Feature/Homepage.feature:6)\r\n",
+              "duration": 6001500,
+              "status": "failed"
+            },
+            "line": 6,
+            "name": "User Launch the site URL",
+            "match": {
+              "location": "com.StepDefination.com.HomePageSteps.userLaunchTheSiteUrl()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 997700,
+              "status": "skipped"
+            },
+            "line": 7,
+            "name": "Allow cookies popup and age confirmation",
+            "match": {
+              "location": "com.StepDefination.com.HomePageSteps.allowCookiesPopupAndAgeConfirmation()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 999700,
+              "status": "skipped"
+            },
+            "line": 8,
+            "name": "User Enter Username and Password",
+            "match": {
+              "location": "com.StepDefination.com.LoginPageSteps.userEnterUsernameAndPassword()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@tag"
+          }
+        ]
+      },
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": []
+      },
+      {
+        "start_timestamp": "2022-08-01T14:05:27.146Z",
+        "line": 10,
+        "name": "Verify homepage links",
+        "description": "",
+        "id": "verify-the-homepage-elements;verify-homepage-links",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "error_message": "java.lang.NullPointerException: Cannot invoke \"org.openqa.selenium.WebDriver.findElement(org.openqa.selenium.By)\" because \"com.pageObjects.com.HomePage.driver\" is null\r\n\tat com.pageObjects.com.HomePage.clickShopDevicesLink(HomePage.java:39)\r\n\tat com.StepDefination.com.HomePageSteps.clickShopDevicesLink(HomePageSteps.java:35)\r\n\tat ✽.User click on Shop Devices Link(file:///C:/Users/saura/eclipse-workspace/com.SwagLab.com/Feature/Homepage.feature:11)\r\n",
+              "duration": 1997100,
+              "status": "failed"
+            },
+            "line": 11,
+            "name": "User click on Shop Devices Link",
+            "match": {
+              "location": "com.StepDefination.com.HomePageSteps.clickShopDevicesLink()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1000900,
+              "status": "skipped"
+            },
+            "line": 12,
+            "name": "User click on Explore Vuse Go",
+            "match": {
+              "location": "com.StepDefination.com.HomePageSteps.clickExploreVuseGo()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 998600,
+              "status": "skipped"
+            },
+            "line": 13,
+            "name": "Click on add to cart button",
+            "match": {
+              "location": "com.StepDefination.com.PDPPageSteps.clickOnAddToCartButton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1001100,
+              "status": "skipped"
+            },
+            "line": 14,
+            "name": "User open basket click on view basket button",
+            "match": {
+              "location": "com.StepDefination.com.CartPageSteps.openBasketClickOnViewBasketButton()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@tag"
+          }
+        ]
+      }
+    ],
+    "name": "Verify the HomePage Elements",
+    "description": "",
+    "id": "verify-the-homepage-elements",
+    "keyword": "Feature",
+    "uri": "file:Feature/Homepage.feature",
+    "tags": [
+      {
+        "name": "@tag",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  }
+]
