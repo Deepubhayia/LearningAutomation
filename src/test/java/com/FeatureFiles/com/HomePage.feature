@@ -7,7 +7,7 @@ Background:
      And Allow cookies popup and age confirmation
      And User Enter Username and Password
      
- @test   
+ @Regression   
  Scenario: Verify homepage links
  Given User click on Shop Devices Link
  Then User click on Explore Vuse Go

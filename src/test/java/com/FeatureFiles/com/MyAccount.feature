@@ -11,7 +11,7 @@ Feature: Verify the features of My Account Page
 		And Hover the mouse to account button and select the MyAccount
 
   @Regression
-  Scenario: MYAC_1001 My Account - Edit Account and Verify the account items text 
+  Scenario: MYAC1001 My Account - Edit Account and Verify the account items text 
 	 Given User Launch the site URL 
     And Allow cookies popup and age confirmation
 		And User Enter Username and Password
@@ -28,9 +28,8 @@ Feature: Verify the features of My Account Page
 	  And Assert that "SAVE_CHANGES_BUTTON.key" is displayed
 
   
-  
-  @Regression
-  Scenario: MYAC_1002 My Account - Edit Account and Verify the button is enabled 
+   @Regression
+  Scenario: MYAC1002 My Account - Edit Account and Verify the button is enabled 
   	Given User Launch the site URL 
     And Allow cookies popup and age confirmation
 		And User Enter Username and Password
@@ -38,5 +37,3 @@ Feature: Verify the features of My Account Page
     And Verify that edit button is enabled
 	  And Verify that change password button is enabled
 	  And Verify that edit address button is enabled 
-#
-    #

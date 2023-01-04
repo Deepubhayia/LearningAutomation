@@ -38,7 +38,6 @@ public class MyAccount extends BaseClass {
 
 	public void verifyTheEditDetailsButtonIsEnabled() {
 		Assert.assertTrue(waitForExpectedElement(editDetailsButton, 30).isEnabled(), "button is enabled");
-
 	
 	}
 
@@ -49,6 +48,13 @@ public class MyAccount extends BaseClass {
 	public void verifyTheEditAddressButtonIsEnabled() {
 		Assert.assertTrue(waitForExpectedElement(editAddressButton, 10).isEnabled(), "edit button is enabled");
 	}
-
+	
+	public void clickOnChangePasswordButton() {
+		try {
+		waitForExpectedElement(changePasswordButton, 20).click();
+	} catch(Exception e) {
+		waitForExpectedElement(changePasswordButton, 20).click();
+	}
+	}
 }
 	

@@ -15,25 +15,23 @@ import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class Hooks  extends BaseClass{
-	
-	@Before
+public class Hooks extends BaseClass {
 
+	@Before
 	public void setup() {
 
 		String browserName = prop.getProperty("browser");
 
 		if (browserName.equals("chrome")) {
-				
+
 			ChromeOptions options = getChromeOptions();
 			options.addArguments("--incognito");
-			  
-			DesiredCapabilities capabilities = new DesiredCapabilities();		
+
+			DesiredCapabilities capabilities = new DesiredCapabilities();
 			capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-			
+
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
-			
 
 		} else if (browserName.equals("firefox")) {
 
@@ -42,15 +40,14 @@ public class Hooks  extends BaseClass{
 
 		}
 		driver.manage().window().maximize();
-		driver.get(prop.getProperty("url"));
 		driver.manage().deleteAllCookies();
-
 	}
 
-/*	public WebDriver getWebDriver() {
-		return driver;
-
-	}*/
+	/*
+	  public WebDriver getWebDriver() { return driver;
+	  
+	  }
+	 */
 
 	private static ChromeOptions getChromeOptions() {
 		LoggingPreferences logs = new LoggingPreferences();
@@ -72,13 +69,10 @@ public class Hooks  extends BaseClass{
 
 				e.printStackTrace();
 			} finally {
-				
-				
+
 			}
 			driver.quit();
 		}
 	}
-
-
 
 }

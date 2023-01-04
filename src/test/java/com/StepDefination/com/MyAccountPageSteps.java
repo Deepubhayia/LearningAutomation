@@ -23,7 +23,7 @@ public class MyAccountPageSteps extends BaseClass {
 
 	@And("Assert that {string} is displayed")
 	public void assertThatTextOnMyAccountPageIsDisplayed(String myAccountText) {
-
+			
 		boolean myAccountPageText = driver.getPageSource().toLowerCase()
 				.contains(prop.getProperty(myAccountText).toLowerCase());
 		Assert.assertEquals(myAccountPageText, true);

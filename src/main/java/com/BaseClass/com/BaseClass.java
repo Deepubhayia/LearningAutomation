@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.NoSuchElementException;
 import java.util.Properties;
-import java.util.logging.Level;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
@@ -16,52 +15,45 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.logging.LogType;
-import org.openqa.selenium.logging.LoggingPreferences;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
-import io.cucumber.java.Scenario;
-import io.github.bonigarcia.wdm.WebDriverManager;
-
 public class BaseClass {
-
+	
 	public static WebDriver driver;
 	public static WebDriverWait wait;
 	public static Properties prop;
 
 	public BaseClass() {
-
+	
 		try {
 			prop = new Properties();
-			FileInputStream ip = new FileInputStream("/home/neha/eclipse-workspace/com.SwagLab.com/Properties/config.properties");
+			FileInputStream ip = new FileInputStream(
+					"/home/neha/eclipse-workspace/com.SwagLab.com/Properties/config.properties");
 			prop.load(ip);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
+
 		}
 	}
-	
+
+	public WebDriver getWebDriver() {
+		
+		return driver;
+	}
+
 	public void launchBrowser() {
 		
-		driver.get(prop.getProperty("url"));	
+		driver.get(prop.getProperty("url"));
+
 	}
-	
-	public WebDriver getWebDriver() {
-		return driver ;
-	}
-	
-	public void hoverOnElement(final By by) { 
+
+	public void hoverOnElement(final By by) {
 
 		Actions action = new Actions(getWebDriver());
 		action.moveToElement(getWebDriver().findElement(by)).build().perform();
@@ -73,7 +65,7 @@ public class BaseClass {
 	}
 
 	public WebElement waitForExpectedElement(final By by, int wait_element) {
-		wait = new WebDriverWait(driver, wait_element); 
+		wait = new WebDriverWait(driver, wait_element);
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 	}
 
@@ -84,24 +76,29 @@ public class BaseClass {
 	}
 
 	public void fluentWaitMethod(final By by) {
-		Wait<WebDriver> fluetWait = new FluentWait<WebDriver>(driver)
-				.withTimeout(Duration.ofSeconds(10))
-				.pollingEvery(Duration.ofSeconds(10))
-				.ignoring(NoSuchElementException.class);
+		Wait<WebDriver> fluetWaitMethod = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(10))
+				.pollingEvery(Duration.ofSeconds(10)).ignoring(NoSuchElementException.class);
 	}
+
+	/*
+	 * public void selectByIndex(final By by , int indexValue) { Select selectIndex
+	 * = new Select((WebElement) getWebDriver().findElement(by));
+	 * selectIndex.selectByIndex(indexValue); }
+	 */
 
 	public static void takeScreenSort() throws IOException {
 		TakesScreenshot ts = (TakesScreenshot) driver; // Convert web driver object to TakeScreenshot
 		File source = ts.getScreenshotAs(OutputType.FILE); // getScreenshotAs method to create image file
-		//	String currentDiretory = System.getProperty("user.dir");
-		FileUtils.copyFile(source, new File( ".//screenshorts//" + System.currentTimeMillis() + ".png"));
- 		// copy file at destination from Source to Destination and filename format
+		// String currentDiretory = System.getProperty("user.dir");
+		FileUtils.copyFile(source, new File(".//screenshorts//" + System.currentTimeMillis() + ".png"));
+		// copy file at destination from Source to Destination and filename format
 	}
 
 	public void clickElementByJSExecutor(final By by) {
-		wait.until(ExpectedConditions.presenceOfElementLocated(by));	// first use explicit wait condition
+		wait.until(ExpectedConditions.presenceOfElementLocated(by)); // first use explicit wait condition
 		JavascriptExecutor jse = (JavascriptExecutor) getWebDriver();
-		jse.executeScript("arguments[0].scrollIntoView()", waitForExpectedElement(by,10));
+		jse.executeScript("arguments[0].scrollIntoView()", waitForExpectedElement(by, 10));
 		jse.executeScript("arguments[0].click()", waitForExpectedElement(by, 10));
 	}
+	
 }

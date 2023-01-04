@@ -17,6 +17,7 @@ public class HomePageSteps extends BaseClass {
 	@Given("User Launch the site URL")
 	public void userLaunchTheSiteUrl() {
 		launchBrowser();
+		
 	}
 
 	@Given("Allow cookies popup and age confirmation")
@@ -24,9 +25,14 @@ public class HomePageSteps extends BaseClass {
 		homepage.selectAllCookiesAndAcceptAge(); // from HomePage method use'
 	}
 
-	@Given("User Search the {string} Product")
+	@Given("User Search the Product {string}")
 	public void searchTheProduct(String productSearch) {
+		try {
 		homepage.searchTheProduct(productSearch);
+		} catch (Exception e) {
+			homepage.searchTheProduct(productSearch);
+		}
+		
 	}
 
 	@Given ("User click on Shop Devices Link")
