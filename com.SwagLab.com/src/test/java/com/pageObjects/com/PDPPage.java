@@ -1,4 +1,5 @@
 package com.pageObjects.com;
+
 import org.openqa.selenium.By;
 import com.BaseClass.com.BaseClass;
 
@@ -12,6 +13,7 @@ public class PDPPage extends BaseClass {
 	}
 
 	public void productAddToCartButton() {
-		waitForExpectedElement(addCartButton, 20).click();
+		clickElementByJSExecutor(addCartButton);
+		// waitForExpectedElement(addCartButton, 20).click();
 	}
 }

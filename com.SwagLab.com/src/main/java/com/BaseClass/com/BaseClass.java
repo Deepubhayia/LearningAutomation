@@ -1,6 +1,4 @@
-package com.BaseClass.com;
-
-
+package com.BaseClass.com; 
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -28,7 +26,7 @@ public class BaseClass {
 	public BaseClass() {
 		try {
 		prop = new Properties();
-		FileInputStream ip = new FileInputStream("C:\\Users\\saura\\eclipse-workspace\\com.SwagLab.com\\Properties\\config.properties");
+		FileInputStream ip = new FileInputStream("C:\\Users\\saura\\git\\LearningAutomation\\com.SwagLab.com\\Properties\\config.properties");
 				prop.load(ip);
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
@@ -45,7 +43,13 @@ public class BaseClass {
 	driver.get(prop.getProperty("url"));
 	}
 
-	public void hoverOnElement(final By by) { // hover mouse
+		public void hoverOnElement(final By by) {
+			
+			Actions action = new Actions(getWebDriver());
+			action.moveToElement(getWebDriver().findElement(by)).build().perform();
+			
+		}
+	public void hoverOnElement(final By by, int waitTime) { // hover mouse
 
 		Actions action = new Actions(getWebDriver());
 		action.moveToElement(getWebDriver().findElement(by)).build().perform();
@@ -62,6 +66,12 @@ public class BaseClass {
 		return wait.until(ExpectedConditions.visibilityOf(element));
 	}
 	
+/*	public Select dropDownSelectByValue(final By by ,String textValue) {
+		Select dropdownByValue = dropDownSelectByValue(by, textValue);
+		return dropdownByValue(textValue);
+		
+	}*/
+
 		public static void takeScreenSort() throws IOException {
 		TakesScreenshot ts = (TakesScreenshot) driver; // Convert web driver object to TakeScreenshot
 		File source = ts.getScreenshotAs(OutputType.FILE); // getScreenshotAs method to create image file
@@ -77,5 +87,6 @@ public class BaseClass {
 			jse.executeScript("arguments[0].click()", waitForExpectedElement(by, 10));
 			
 		}
+		
 }
 
